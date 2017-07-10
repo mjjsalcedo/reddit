@@ -1,5 +1,6 @@
 
 const contentDiv = document.getElementById('content');
+const containerDiv = document.getElementById('container');
 
 function createXHR(method, url, cb){
   var oReq = new XMLHttpRequest();
@@ -9,7 +10,7 @@ function createXHR(method, url, cb){
   return oReq;
 }
 
-var request = createXHR("GET", "https://www.reddit.com/r/lol.json", populatePage);
+var request = createXHR("GET", "https://www.reddit.com/r/pugs.json", populatePage);
 
 function populatePage(){
   var allData = JSON.parse(this.responseText);
@@ -18,9 +19,11 @@ function populatePage(){
 
   postsArray.forEach( (post) => {
     var postDivEl = document.createElement('div');
-    contentDiv.appendChild(postDivEl);
+    postDivEl.className = 'posts';
+    containerDiv.appendChild(postDivEl);
 
     var imageEl = document.createElement('img');
+    imageEl.className = 'images';
     if (!post.data.url){
       imageEl.src = post.data.media.oembed.thumbnail_url;
     } else {
@@ -32,10 +35,12 @@ function populatePage(){
 
     var titleEl = document.createElement('h2');
     titleEl.innerHTML = post.data.title;
+    titleEl.className = 'titles';
     postDivEl.appendChild(titleEl);
 
     var detailsEl = document.createElement('p');
     detailsEl.innerHTML = 'by ' + post.data.author + ' * ' + post.data.created + ' * upcounts: ' + post.data.ups;
+    detailsEl.className = 'details';
     postDivEl.appendChild(detailsEl);
   });
 }
