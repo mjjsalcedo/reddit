@@ -1,4 +1,7 @@
 /*$variablepadding:*/
+#header{
+
+}
 
 #content {
   background-image: url('/assets/bg.jpg');
@@ -7,9 +10,40 @@
 
 }
 
+#topMenu{
+    list-style-type: none;
+    width:100%;
+    margin:0 auto;
+    padding:0;
+    list-style:none;
+    background-color:#333;
+    text-align:center;
+}
+
+ .guide{
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    display:inline-block;
+    width:20%;
+    margin:0;
+    padding:0;
+}
+
+.guide a {
+    text-align:center;
+    padding:20px;
+    margin:0;
+    display:block;
+    color: white;
+    text-decoration: none;
+}
+
+.guide a:hover {
+    background-color: #0EC23B;
+}
+
 #container{
   width: 700px;
-  /*background-color: green;*/
   text-align: center;
   margin: auto;
   box-sizing: border-box;
