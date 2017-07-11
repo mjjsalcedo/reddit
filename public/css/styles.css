@@ -1,3 +1,7 @@
+/*$variablepadding:*/
+* {
+  margin: 0;
+  padding: 0; }
 
 header {
   padding-bottom: 200px;
@@ -8,8 +12,29 @@ header {
   padding-top: 60px;
   background-image: url("/assets/logo.svg"), url("/assets/header_bg.svg");
   background-repeat: no-repeat;
-  background-position: center; }
+  background-position: center;
+  /*background-color: purple;*/ }
 
+#plusSign {
+  /*background-color: yellow;*/
+  display: inline-block;
+  border: solid #F15A29 1px;
+  width: 30px;
+  height: 30px;
+  font-size: 42px;
+  padding: 0px;
+  margin: 0px;
+  line-height: 26px;
+  text-align: center;
+  vertical-align: middle;
+  position: absolute;
+  right: 15px;
+  margin-top: 13px;
+  color: #f0592b; }
+
+#plusSign:hover {
+  color: white;
+  background-color: #F15A29; }
 
 #content {
   background-image: url("/assets/bg.jpg");
@@ -170,10 +195,6 @@ footer {
     color: #797a7d;
     text-decoration: none;
     border-right: 1px solid #bbb; }
-  #dot1 {
-    display: none; }
-  li:fourth-child {
-    display: none; }
   li:last-child {
     border-right: none; }
   .posts {
