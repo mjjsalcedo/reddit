@@ -166,7 +166,7 @@ footer {
   content: url('/assets/instagram_orange.svg');
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
 
   header{
       padding-bottom: 200px;
@@ -195,11 +195,30 @@ footer {
   }
 }
 
-@media screen and (max-width: 450px){
+@media screen and (max-width: 700px){
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
   header{
     padding-bottom: 200px;
     background-image: url('/assets/logo.svg');
     float:left
+  }
+
+  li {
+    color: #797a7d;
+    border-right: 1px solid #bbb;
+    padding-right:10%;
+  }
+
+  li:last-child {
+    border-right: none;
+  }
+
+  .guide span {
+    display: none;
   }
 
   #heading{
@@ -210,39 +229,18 @@ footer {
   }
 
   #container{
-    width: 425px;
-    text-align: center;
+    width: 100%;
     padding-top: 0px;
     padding-bottom: 10px;
+    text-align: center;
     box-sizing: border-box;
-  }
-
-  li {
-    /* text-align:center; */
-    padding:0px;
-    width: 75px;
-    margin:0;
-    display:block;
-    color: #797a7d;
-    text-decoration: none;
-    border-right: 1px solid #bbb;
-  }
-
-  .guide span {
-    display: none;
-  }
-
-  li:last-child {
-    border-right: none;
   }
 
   .posts {
     background-color: white;
     height: 435px;
-    width: 410px;
+    width: 500px;
     display: inline-block;
-    margin-left: 5px;
-    margin-right: 5px;
     margin-bottom: 0px;
     box-sizing: border-box;
     overflow: hidden;
@@ -250,8 +248,8 @@ footer {
   }
 
   .imageDivs {
-    height: 270px;
-    width: 360px;
+    height: 320px;
+    width: 450px;
     box-sizing: border-box;
     background-size: cover;
     background-position: center;
