@@ -1,17 +1,17 @@
-/*$variablepadding:*/
+
+
 header{
-      padding-bottom: 200px;
-      background-image: url('/assets/logo.svg');
-      float:left
-    }
+  padding-bottom: 200px;
+  background-image: url('/assets/logo.svg');
+  float:left
+}
 
-  #heading{
-    padding-top:60px;
-    background-image: url('/assets/logo.svg'), url('/assets/header_bg.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-
+#heading{
+  padding-top:60px;
+  background-image: url('/assets/logo.svg'), url('/assets/header_bg.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 #content {
   background-image: url('/assets/bg.jpg');
@@ -35,6 +35,15 @@ header{
 }
 
 .guide a {
+  text-align:center;
+  padding-right: 10px;
+  margin:0;
+  display:block;
+  color: #797a7d;
+  text-decoration: none;
+}
+
+.guide span {
   text-align:center;
   padding-right: 10px;
   margin:0;
@@ -132,22 +141,6 @@ footer {
   content: url('/assets/instagram_orange.svg');
 }
 
-@media (max-width: 1200px) {
-
-  #container {
-    width: 700px;
-    text-align: center;
-    margin: auto;
-    box-sizing: border-box;
-    padding-top: 25px;
-  }
-
-  #content {
-    text-align: center;
-  }
-
-}
-
 @media screen and (max-width: 800px) {
 
   header{
@@ -197,14 +190,18 @@ footer {
   }
 
   li {
-      text-align:center;
+      /* text-align:center; */
       padding:0px;
-      width: 100px;
+      width: 50px;
       margin:0;
       display:block;
       color: #797a7d;
       text-decoration: none;
       border-right: 1px solid #bbb;
+  }
+
+  .guide span {
+  display: none;
   }
 
   li:last-child {
