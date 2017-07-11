@@ -39,9 +39,6 @@ function populatePage(){
     var imageDivEl = document.createElement('div');
     imageDivEl.className = 'imageDivs';
 
-    // var imgSrc1 = post.data.url;
-    // var imgSrc2 = post.data.media.oembed.thumbnail_url;
-
     if (post.data.url){
       if (post.data.url.search('jpg') === -1 && post.data.url.search('jpeg') === -1 && post.data.url.search('png') === -1){
         imageDivEl.style.backgroundImage = 'url(' + 'assets/placeholder.jpg' + ')';
@@ -51,7 +48,6 @@ function populatePage(){
       }
     } else {
       if (post.data.media.oembed.thumbnail_url){
-      console.log('yes to imgSrc 2');
         if(post.data.media.oembed.thumbnail_url.search('jpg') === -1 && post.data.media.oembed.thumbnail_url.search('jpeg') === -1 && post.data.media.oembed.thumbnail_url.search('png') === -1){
           imageDivEl.style.backgroundImage = 'url(' + '/assets/placeholder.jpg' + ')';
         } else {
@@ -71,7 +67,7 @@ function populatePage(){
 
     var whenPosted = moment(new Date(post.data.created * 1000)).fromNow();
     var detailsEl = document.createElement('p');
-    detailsEl.innerHTML = 'by ' + post.data.author + ' &#8226 ' + whenPosted + ' &#8226 ' + post.data.ups + ' upcounts';
+    detailsEl.innerHTML = 'by  ' + post.data.author + '  &#8226  ' + whenPosted + '  &#8226  ' + post.data.ups + '  upcounts';
     detailsEl.className = 'details';
     postDivEl.appendChild(detailsEl);
   });
