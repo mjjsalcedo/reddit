@@ -1,4 +1,11 @@
 /*$variablepadding:*/
+#heading{
+  padding-bottom: 200px;
+  background-repeat: no-repeat;
+  background-image: url('/assets/header_bg.svg');
+  background-position: center;
+  background-attachment: fixed;
+}
 
 #content {
   background-image: url('/assets/bg.jpg');
@@ -7,9 +14,37 @@
 
 }
 
+#topMenu{
+    list-style-type: none;
+    width:100%;
+    padding:0;
+    list-style:none;
+    background-color:#39393b;
+    text-align:center;
+}
+
+ .guide{
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    display:inline-block;
+    margin:0;
+}
+
+.guide a {
+    text-align:center;
+    padding:20px;
+    margin:0;
+    display:block;
+    color: #797a7d;
+    text-decoration: none;
+}
+
+.guide a:hover {
+    color: #f0592b;
+}
+
 #container{
   width: 700px;
-  /*background-color: green;*/
   text-align: center;
   margin: auto;
   box-sizing: border-box;
@@ -35,6 +70,9 @@
   box-sizing: border-box;
   background-size: cover;
   background-position: center;
+}
+.posts a:hover {
+  background-color: #f0592b;
 }
 
 .titles {
@@ -63,20 +101,94 @@
   font-size: 14px;
 }
 
+footer{
+    list-style-type: none;
+    width:100%;
+    margin:0 auto;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    list-style:none;
+    background-color:#39393b;
+    text-align:center;
+}
 
+.social {
+  display:inline-block;
+    margin:5px;
+    padding:0;
+}
 
-@media (min-width: 800px) {
+@media (max-width: 1200px) {
+  #container{
+  width: 700px;
+  text-align: center;
+  margin: auto;
+  box-sizing: border-box;
+}
+
   #content {
     text-align: center;
   }
 
 }
 
-@media (min-width: 600px) {
+@media screen and (max-width: 800px) {
+#container{
+  width: 700px;
+  text-align: center;
+  margin: auto;
+  box-sizing: border-box;
+}
+footer{
+  display: none;
+}
 
 }
 
-@media (min-width: 400px){
+@media screen and (max-width: 500px){
+
+header{
+  padding-bottom: 200px;
+  background-image: url('/assets/logo.svg');
+  float:left
+}
+
+#container{
+  width: 400px;
+  text-align: center;
+  margin: auto;
+  box-sizing: border-box;
+}
+.guide a {
+    text-align:center;
+    padding:10px;
+    margin:0;
+    display:inline-block;
+    color: #797a7d;
+    text-decoration: none;
+    border-right: 1px solid #bbb;
+}
+
+.guide a last-child{
+  border-right:none;
+}
+
+.posts{
+  background-color: white;
+  height: 400px;
+  width: 400px;
+  display: inline-block;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  box-sizing: border-box;
+  overflow: auto;
+  text-align: left;
+}
+
+footer{
+  display: none;
+}
+
 
 }
 
