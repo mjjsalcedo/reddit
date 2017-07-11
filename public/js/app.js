@@ -22,20 +22,6 @@ function populatePage(){
     postDivEl.className = 'posts';
     containerDiv.appendChild(postDivEl);
 
-    // changing img element to div element with image-background property
-    // var imageEl = document.createElement('img');
-    // imageEl.className = 'images';
-    // imageEl.alt = 'hello';
-    // if (!post.data.url){
-    //   imageEl.src = post.data.media.oembed.thumbnail_url;
-    // } else {
-    //   if (!post.data.url)
-    //   {
-    //     imageEl.src = '/assets/placeholder.png';
-    //   } else {
-    //     imageEl.src = post.data.url+'.jpg';
-    //   }
-    // }
     var imageDivEl = document.createElement('div');
     imageDivEl.className = 'imageDivs';
 

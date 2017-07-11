@@ -33,9 +33,6 @@
   color: #797a7d;
   text-decoration: none; }
 
-.guide a:hover {
-  color: #f0592b; }
-
 #container {
   width: 700px;
   text-align: center;
@@ -62,8 +59,10 @@
   background-size: cover;
   background-position: center; }
 
-.posts a:hover {
-  background-color: #f0592b; }
+.posts:hover {
+  border: solid 5px #F59120;
+  box-sizing: border-box;
+  padding: 20px; }
 
 .titles {
   font-family: 'Oswald', sans-serif;
@@ -106,6 +105,15 @@ footer {
   display: inline-block;
   margin: 5px;
   padding: 0; }
+
+.guide a:hover {
+  color: #f0592b; }
+
+#facebookImg:hover {
+  content: url("/assets/facebook_orange.svg"); }
+
+#instagramImg:hover {
+  content: url("/assets/instagram_orange.svg"); }
 
 @media (max-width: 1200px) {
   #container {
