@@ -1,4 +1,4 @@
-/*$variablepadding:*/
+
 header {
   padding-bottom: 200px;
   background-image: url("/assets/logo.svg");
@@ -9,6 +9,7 @@ header {
   background-image: url("/assets/logo.svg"), url("/assets/header_bg.svg");
   background-repeat: no-repeat;
   background-position: center; }
+
 
 #content {
   background-image: url("/assets/bg.jpg");
