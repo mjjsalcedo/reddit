@@ -23,6 +23,12 @@ loadPage();
 
 function toggleContent(e){
   navValue = e.target.id;
+  lolNavEl.style = '#797a7d';
+  corgiNavEl.style = '#797a7d';
+  catNavEl.style = '#797a7d';
+
+  e.target.style.color = '#f0592b';
+
   loadPage();
 }
 
@@ -70,7 +76,7 @@ function loadPage(){
       titleEl.className = 'titles';
       postDivEl.appendChild(titleEl);
 
-      var whenPosted = moment(new Date(post.data.created * 1000)).fromNow();
+      var whenPosted = moment.unix((post.data.created_utc)).fromNow();
       var detailsEl = document.createElement('p');
       detailsEl.innerHTML = 'by  ' + post.data.author + '  &#8226  ' + whenPosted + '  &#8226  ' + post.data.ups + '  upcounts';
       detailsEl.className = 'details';
