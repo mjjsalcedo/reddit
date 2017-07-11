@@ -23,14 +23,16 @@
   margin: 12px 12px;
   padding: 25px;
   box-sizing: border-box;
-  overflow: auto;
+  overflow: hidden;
   text-align: left;
 }
 
-.images {
+.imageDivs {
   height: 168px;
   width: 275px;
   box-sizing: border-box;
+  background-size: cover;
+  background-position: center;
 
 }
 
