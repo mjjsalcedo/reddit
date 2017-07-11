@@ -1,4 +1,4 @@
-/*$variablepadding:*/
+
 * {
   margin: 0;
   padding: 0; }
@@ -55,6 +55,14 @@ header {
   margin: 0; }
 
 .guide a {
+  text-align: center;
+  padding-right: 10px;
+  margin: 0;
+  display: block;
+  color: #797a7d;
+  text-decoration: none; }
+
+.guide span {
   text-align: center;
   padding-right: 10px;
   margin: 0;
@@ -143,16 +151,6 @@ footer {
 #instagramImg:hover {
   content: url("/assets/instagram_orange.svg"); }
 
-@media (max-width: 1200px) {
-  #container {
-    width: 700px;
-    text-align: center;
-    margin: auto;
-    box-sizing: border-box;
-    padding-top: 25px; }
-  #content {
-    text-align: center; } }
-
 @media screen and (max-width: 800px) {
   header {
     padding-bottom: 200px;
@@ -187,16 +185,23 @@ footer {
     margin-left: 15px;
     box-sizing: border-box; }
   li {
-    text-align: center;
+    /* text-align:center; */
     padding: 0px;
-    width: 100px;
+    width: 50px;
     margin: 0;
     display: block;
     color: #797a7d;
     text-decoration: none;
     border-right: 1px solid #bbb; }
+  
+  .guide span {
+    display: none; 
+  }
+
   li:last-child {
-    border-right: none; }
+    border-right: none; 
+  }
+  
   .posts {
     background-color: white;
     height: 435px;
@@ -206,13 +211,16 @@ footer {
     margin-bottom: 0px;
     box-sizing: border-box;
     overflow: hidden;
-    text-align: left; }
+    text-align: left; 
+  }
+  
   .imageDivs {
     height: 170px;
     width: 275px;
     box-sizing: border-box;
     background-size: cover;
-    background-position: center; }
+    background-position: center; 
+  }
   /* .posts{
   background-color: white;
   height: 435px;
@@ -226,4 +234,5 @@ footer {
 }
  */
   footer {
-    display: none; } }
+    display: none; } 
+}

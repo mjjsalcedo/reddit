@@ -1,4 +1,4 @@
-/*$variablepadding:*/
+
 * {
   margin: 0;
   padding: 0;
@@ -15,11 +15,9 @@ header {
   background-image: url('/assets/logo.svg'), url('/assets/header_bg.svg');
   background-repeat: no-repeat;
   background-position: center;
-  /*background-color: purple;*/
 }
 
 #plusSign{
-  /*background-color: yellow;*/
   display:inline-block;
   border: solid #F15A29 1px;
   width: 30px;
@@ -39,6 +37,18 @@ header {
 #plusSign:hover {
   color: white;
   background-color: #F15A29;
+
+header{
+  padding-bottom: 200px;
+  background-image: url('/assets/logo.svg');
+  float:left
+}
+
+#heading{
+  padding-top:60px;
+  background-image: url('/assets/logo.svg'), url('/assets/header_bg.svg');
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 #content {
@@ -63,6 +73,15 @@ header {
 }
 
 .guide a {
+  text-align:center;
+  padding-right: 10px;
+  margin:0;
+  display:block;
+  color: #797a7d;
+  text-decoration: none;
+}
+
+.guide span {
   text-align:center;
   padding-right: 10px;
   margin:0;
@@ -126,7 +145,6 @@ header {
   font-family: 'Lato', sans-serif;
   color: grey;
   box-sizing: border-box;
-  /*background-color: green;*/
   margin: 7px 0px 0px 0px;
   font-size: 14px;
 }
@@ -158,22 +176,6 @@ footer {
 
 #instagramImg:hover {
   content: url('/assets/instagram_orange.svg');
-}
-
-@media (max-width: 1200px) {
-
-  #container {
-    width: 700px;
-    text-align: center;
-    margin: auto;
-    box-sizing: border-box;
-    padding-top: 25px;
-  }
-
-  #content {
-    text-align: center;
-  }
-
 }
 
 @media screen and (max-width: 800px) {
@@ -225,14 +227,18 @@ footer {
   }
 
   li {
-      text-align:center;
+      /* text-align:center; */
       padding:0px;
-      width: 100px;
+      width: 50px;
       margin:0;
       display:block;
       color: #797a7d;
       text-decoration: none;
       border-right: 1px solid #bbb;
+  }
+
+  .guide span {
+  display: none;
   }
 
   li:last-child {
