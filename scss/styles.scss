@@ -1,4 +1,42 @@
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  padding-bottom: 200px;
+  background-image: url('/assets/logo.svg');
+  float:left
+}
+
+#heading{
+  padding-top:60px;
+  background-image: url('/assets/logo.svg'), url('/assets/header_bg.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#plusSign{
+  display:inline-block;
+  border: solid #F15A29 1px;
+  width: 30px;
+  height: 30px;
+  font-size: 42px;
+  padding: 0px;
+  margin: 0px;
+  line-height: 26px;
+  text-align: center;
+  vertical-align: middle;
+  position: absolute;
+  right: 15px;
+  margin-top: 13px;
+  color: #f0592b;
+}
+
+#plusSign:hover {
+  color: white;
+  background-color: #F15A29;
 
 header{
   padding-bottom: 200px;
@@ -107,7 +145,6 @@ header{
   font-family: 'Lato', sans-serif;
   color: grey;
   box-sizing: border-box;
-  /*background-color: green;*/
   margin: 7px 0px 0px 0px;
   font-size: 14px;
 }
