@@ -1,4 +1,11 @@
 /*$variablepadding:*/
+#heading {
+  padding-bottom: 200px;
+  background-repeat: no-repeat;
+  background-image: url("/assets/header_bg.svg");
+  background-position: center;
+  background-attachment: fixed; }
+
 #content {
   background-image: url("/assets/bg.jpg");
   /*background-size: cover;*/
@@ -7,30 +14,27 @@
 #topMenu {
   list-style-type: none;
   width: 100%;
-  margin: 0 auto;
   padding: 0;
   list-style: none;
-  background-color: #333;
+  background-color: #39393b;
   text-align: center; }
 
 .guide {
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
   display: inline-block;
-  width: 20%;
-  margin: 0;
-  padding: 0; }
+  margin: 0; }
 
 .guide a {
   text-align: center;
   padding: 20px;
   margin: 0;
   display: block;
-  color: white;
+  color: #797a7d;
   text-decoration: none; }
 
 .guide a:hover {
-  background-color: #0EC23B; }
+  color: #f0592b; }
 
 #container {
   width: 700px;
@@ -49,6 +53,9 @@
   overflow: auto;
   text-align: left; }
 
+.posts a:hover {
+  background-color: #f0592b; }
+
 .images {
   height: 168px;
   width: 275px;
@@ -63,6 +70,64 @@
   color: grey;
   box-sizing: border-box; }
 
-@media (min-width: 800px) {
+footer {
+  list-style-type: none;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  list-style: none;
+  background-color: #39393b;
+  text-align: center; }
+
+.social {
+  display: inline-block;
+  margin: 5px;
+  padding: 0; }
+
+@media (max-width: 1200px) {
+  #container {
+    width: 700px;
+    text-align: center;
+    margin: auto;
+    box-sizing: border-box; }
   #content {
     text-align: center; } }
+
+@media screen and (max-width: 800px) {
+  #container {
+    width: 700px;
+    text-align: center;
+    margin: auto;
+    box-sizing: border-box; }
+  footer {
+    display: none; } }
+
+@media screen and (max-width: 500px) {
+  #container {
+    width: 400px;
+    text-align: center;
+    margin: auto;
+    box-sizing: border-box; }
+  .guide a {
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+    display: inline-block;
+    color: #797a7d;
+    text-decoration: none;
+    border-right: 1px solid #bbb; }
+  .guide a last-child {
+    border-right: none; }
+  .posts {
+    background-color: white;
+    height: 400px;
+    width: 400px;
+    display: inline-block;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    box-sizing: border-box;
+    overflow: auto;
+    text-align: left; }
+  footer {
+    display: none; } }
