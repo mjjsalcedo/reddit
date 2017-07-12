@@ -10,10 +10,6 @@ function createXHR(method, url, cb){
   return oReq;
 }
 
-function checkIfImage(url){
-
-}
-
 var pugNavEl = document.getElementById('pug');
 var corgiNavEl = document.getElementById('corgi');
 var catNavEl = document.getElementById('cats');
@@ -25,7 +21,7 @@ catNavEl.addEventListener('click', toggleContent);
 pugNavEl.style.color = '#f0592b';
 
 var navValue = 'pug';
-loadPage();
+var request = createXHR("GET", `https://www.reddit.com/r/${navValue}.json`, populatePage);
 
 function toggleContent(e){
   navValue = e.target.id;
@@ -35,53 +31,46 @@ function toggleContent(e){
 
   e.target.style.color = '#f0592b';
 
-  loadPage();
+  var newRequest = createXHR("GET", `https://www.reddit.com/r/${navValue}.json`, populatePage);
 }
 
-function loadPage(){
-  var request = createXHR("GET", `https://www.reddit.com/r/${navValue}.json`, populatePage);
+function populatePage(){
+  containerDiv.innerHTML = '';
 
-  function populatePage(){
-    containerDiv.innerHTML = '';
+  var allData = JSON.parse(this.responseText);
+  var postsArray = allData.data.children;
 
-    var allData = JSON.parse(this.responseText);
-    console.log("me!", allData.data.children[0].data.title);
-    var postsArray = allData.data.children;
+  postsArray.forEach( (post, index, array) => {
+    var postDivEl = document.createElement('div');
+    postDivEl.className = 'posts';
+    containerDiv.appendChild(postDivEl);
 
-    postsArray.forEach( (post, index, array) => {
-      var postDivEl = document.createElement('div');
-      postDivEl.className = 'posts';
-      containerDiv.appendChild(postDivEl);
-
-      var imageDivEl = document.createElement('div');
-      imageDivEl.className = 'imageDivs';
+    var imageDivEl = document.createElement('div');
+    imageDivEl.className = 'imageDivs';
 
 
-      if (post.data.url && (post.data.url.search('jpg') !== -1 || post.data.url.search('jpeg') !== -1 || post.data.url.search('png') !== -1)){
-        imageDivEl.style.backgroundImage = 'url(' + post.data.url + ')';
-      } else if (post.data.thumbnail && (post.data.thumbnail.search('jpg') !== -1 || post.data.thumbnail.search('jpeg') !== -1 || post.data.thumbnail.search('png')
-            !== -1)){
-        imageDivEl.style.backgroundImage = 'url(' + post.data.thumbnail + ')';
-      } else {
-        imageDivEl.style.backgroundImage = 'url(' + '/assets/placeholder.jpg' + ')';
-      }
+    if (post.data.url && (post.data.url.search('jpg') !== -1 || post.data.url.search('jpeg') !== -1 || post.data.url.search('png') !== -1)){
+      imageDivEl.style.backgroundImage = 'url(' + post.data.url + ')';
+    } else if (post.data.thumbnail && (post.data.thumbnail.search('jpg') !== -1 || post.data.thumbnail.search('jpeg') !== -1 || post.data.thumbnail.search('png')
+      !== -1)){
+      imageDivEl.style.backgroundImage = 'url(' + post.data.thumbnail + ')';
+    } else {
+      imageDivEl.style.backgroundImage = 'url(' + '/assets/placeholder.jpg' + ')';
+    }
 
-      console.log(index, post.data.url, imageDivEl.style.backgroundImage);
+    postDivEl.appendChild(imageDivEl);
 
-      postDivEl.appendChild(imageDivEl);
+    var titleEl = document.createElement('h2');
+    titleEl.innerHTML = post.data.title;
+    titleEl.className = 'titles';
+    postDivEl.appendChild(titleEl);
 
-      var titleEl = document.createElement('h2');
-      titleEl.innerHTML = post.data.title;
-      titleEl.className = 'titles';
-      postDivEl.appendChild(titleEl);
-
-      var whenPosted = moment.unix((post.data.created_utc)).fromNow();
-      var detailsEl = document.createElement('p');
-      detailsEl.innerHTML = 'by  ' + post.data.author + '  &#8226  ' + whenPosted + '  &#8226  ' + post.data.ups + '  upcounts';
-      detailsEl.className = 'details';
-      postDivEl.appendChild(detailsEl);
-    });
-  }
+    var whenPosted = moment.unix((post.data.created_utc)).fromNow();
+    var detailsEl = document.createElement('p');
+    detailsEl.innerHTML = 'by  ' + post.data.author + '  &#8226  ' + whenPosted + '  &#8226  ' + post.data.ups + '  upcounts';
+    detailsEl.className = 'details';
+    postDivEl.appendChild(detailsEl);
+  });
 }
 
 
