@@ -10,10 +10,6 @@ function createXHR(method, url, cb){
   return oReq;
 }
 
-function checkIfImage(url){
-
-}
-
 var pugNavEl = document.getElementById('pug');
 var corgiNavEl = document.getElementById('corgi');
 var catNavEl = document.getElementById('cats');
@@ -45,7 +41,6 @@ function loadPage(){
     containerDiv.innerHTML = '';
 
     var allData = JSON.parse(this.responseText);
-    console.log("me!", allData.data.children[0].data.title);
     var postsArray = allData.data.children;
 
     postsArray.forEach( (post, index, array) => {
@@ -60,13 +55,11 @@ function loadPage(){
       if (post.data.url && (post.data.url.search('jpg') !== -1 || post.data.url.search('jpeg') !== -1 || post.data.url.search('png') !== -1)){
         imageDivEl.style.backgroundImage = 'url(' + post.data.url + ')';
       } else if (post.data.thumbnail && (post.data.thumbnail.search('jpg') !== -1 || post.data.thumbnail.search('jpeg') !== -1 || post.data.thumbnail.search('png')
-            !== -1)){
+        !== -1)){
         imageDivEl.style.backgroundImage = 'url(' + post.data.thumbnail + ')';
       } else {
         imageDivEl.style.backgroundImage = 'url(' + '/assets/placeholder.jpg' + ')';
       }
-
-      console.log(index, post.data.url, imageDivEl.style.backgroundImage);
 
       postDivEl.appendChild(imageDivEl);
 
